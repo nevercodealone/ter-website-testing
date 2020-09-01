@@ -1,0 +1,43 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              formEditor:
+                editors:
+                  900:
+                    # Extend finisher drop down
+                    selectOptions:
+                      35:
+                        value: 'CustomFinisher'
+                        label: 'My own Finisher'
+                propertyCollections:
+                  finishers:
+                    # add finisher fields
+                    25:
+                      identifier: 'CustomFinisher'
+                      editors:
+                        __inheritances:
+                          10: 'TYPO3.CMS.Form.mixins.formElementMixins.BaseCollectionEditorsMixin'
+                        100:
+                          label: "My Finisher"
+                        # custom field (input, required)
+                        110:
+                          identifier: 'username'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Username'
+                          propertyPath: 'options.username'
+                          propertyValidators:
+                            10: 'NotEmpty'
+          finishersDefinition:
+            CustomFinisher:
+              implementationClassName: 'Pixelink\MyFinisher\Domain\Finishers\CustomFinisher'
+              options:
+                username: 'Pixel Ink'
+      persistenceManager:
+        allowedExtensionPaths:
+          10: EXT:myfinisher/Resources/Private/Forms/
+        allowSaveToExtensionPaths: true
+        allowDeleteFromExtensionPaths: true

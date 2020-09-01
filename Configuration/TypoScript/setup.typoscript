@@ -1,0 +1,15 @@
+plugin.tx_form {
+    settings {
+        yamlConfigurations {
+            150 = EXT:myfinisher/Configuration/Form/CustomFormSetup.yaml
+        }
+    }
+}
+
+module.tx_form {
+    settings {
+        yamlConfigurations {
+            150 = EXT:myfinisher/Configuration/Form/CustomFormSetup.yaml
+        }
+    }
+}

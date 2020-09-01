@@ -1,0 +1,23 @@
+{
+	"name": "pixelink/myfinisher",
+	"type": "typo3-cms-extension",
+	"version": "1.0.0",
+	"description": "Form finisher",
+	"homepage": "https://www.pixel-ink.de",
+	"keywords": ["finisher", "Form", "Pixel Ink", "TYPO3"],
+	"author": [
+		{
+			"name": "Benjamin Riezler",
+			"role": "Developer",
+			"homepage": "https://www.pixel-ink.de"
+		}
+	],
+	"require": {
+		"typo3/cms-core": "^10.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Pixelink\\MyFinisher\\": "Classes"
+		}
+	}
+}
